@@ -1,0 +1,373 @@
+:root {
+    color-scheme: light;
+    view-transition-name: root;
+
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --color-text: rgb(80, 24, 39);
+    --color-background: rgb(153, 188, 205);
+    --color-primary-hover: white;
+    --color-muted: rgb(148, 211, 227);
+    /*rgb(183, 109, 145);*/
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+
+    --radius: 8px;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-text: rgb(153, 188, 205);
+    --color-background: rgb(80, 0, 56);
+    --color-primary-hover: rgb(80, 0, 56);
+    --color-muted: rgb(91, 111, 125);
+}
+
+#theme-toggle {
+    accent-color: var(--color-text);
+    cursor: pointer;
+}
+
+#theme-toggle:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 4px;
+}
+
+label:has(#theme-toggle) {
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+
+body {
+    margin: 0;
+    font-size: 1.0rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: transparent;
+    transition:
+        background-color 0.5s ease-in-out;
+}
+
+/*Headings and text*/
+h1, 
+h2, 
+h3 {
+    color: var(--color-text);
+    font-weight: em;
+}
+
+p {
+    margin: 0 0 var(--space-2);
+}
+
+a {
+    color: var(--color-text);
+    text-underline-offset: 3px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+
+/*Header*/
+header {
+    background-color: var(--color-background);
+    color: var(--color-text);
+
+}
+
+
+
+/*Navigation menu*/
+
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  color: var(--color-text);
+}
+
+/*Below, the child combinator is used to access the <a> tag, 
+which is a child of the <nav> tag that's labeled as horizontalMenu.*/ 
+.main-menu a,
+.horizontalMenu > a {
+    display: block;
+    padding: 0.5rem 0.65rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    color: var(--color-text);
+}
+
+.main-menu a:hover,
+.horizontalMenu > a:hover {
+    color: var(--color-text);
+    background-color: var(--color-primary-hover);
+}
+
+.main-menu a:focus-visible,
+.horizontalMenu > a:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+
+/*main content*/
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    padding: 1.5rem;
+    box-sizing: border-box;
+    color: var(--color-text);
+    
+}
+
+main section {
+    margin-bottom: 2rem;
+    
+    color: var(--color-text);
+    
+}
+
+main page-section {
+    margin-bottom: 2rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+section > ol {
+    color: var(--color-text);
+}
+
+article {
+    
+    margin-bottom: 2rem;
+    
+    background-color: var(--color-background);
+    transition: background-color 0.5s ease-in-out;
+    border: 1px solid var(--color-text);
+    border-radius: var(--radius);
+    
+}
+
+/*artwork images*/
+
+
+article img {
+    display: block;
+    width: auto;
+    max-width: calc(100% - 1rem);
+    height: auto;
+    max-height: 300px;
+    margin: 0.5rem auto;
+    object-fit: contain;
+}
+
+
+/*Here, the adjacent sibling combinator is used to access and set values 
+for both <img> tags and <p> since they are siblings and are on the same level.*/
+
+
+article img + p {
+    color: var(--color-text);
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+
+fieldset {
+    padding: 1.5rem;
+    border: 1px solid white;
+    border-radius: var(--radius);
+}
+
+fieldset input:focus-visible{
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+input[type="submit"],
+input[type="text"], 
+input[type="email"],
+textarea {
+    border-width: 0.0rem;
+    padding: 0.2rem;
+    background-color: var(--color-text);
+    color: var(--color-background);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+button {
+    border: 2px solid var(--color-text);
+    padding: 0.5em 1.25em;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-radius: var(--radius);
+
+}
+
+button:hover,
+button:focus {
+    border: 2px solid var(--color-text);
+    background-color: var(--color-primary-hover);
+    color: var(--color-text);
+    font-weight: bold;
+    border-radius: var(--radius);
+
+    
+    
+
+}
+
+.noJSForm {
+    margin-top: 0rem;
+    padding: 1rem;
+    border: 2px solid var(--color-background);
+    border-radius: var(--radius);
+    background-color: var(--color-background);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.noJSForm form-field {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.2rem 1rem;
+    margin: auto;
+}
+
+.noJSForm form-field label {
+    font-weight: 800;
+}
+
+.noJSForm form-field input:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+
+}
+
+.noJSForm input:required, textarea:required {
+    border-color: var(--color-background);
+    outline: 3px solid var(--color-background);
+}
+
+.noJSForm input[type="text"]:user-invalid, input[type="email"]:user-invalid, textarea:user-invalid {
+    border-color: red;
+    outline: 3px solid red;
+}
+
+.noJSForm form-field input + output, form-field textarea + output {
+    font-size: 0.8rem;
+}
+
+.error {
+    padding: 0.75rem 1rem;
+    color: rgb(228, 48, 48);
+}
+
+.character-counter {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-left: 4px solid;
+    background-color: rgb(240, 227, 158);
+}
+
+article iframe {
+    /*
+    display: block;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    border: 4px solid var(--color-text);
+    */
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: var(--space-4) var(--space-3);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
+
+/* Narrow screens */
+@media (max-width: 600px) {
+    .main-menu {
+        gap: 0.5rem;
+    }
+
+    .main-menu a,
+    .horizontalMenu > a {
+        padding: 0.65rem 0.5rem;
+    }
+
+    .noJSForm form-field {
+        flex-basis: 100%;
+    }
+}
+
+
+
+
+/*rgb(115, 8, 8); rgb(53, 30, 40);*/

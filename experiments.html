@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Website</title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <header>
+            <span>
+                
+                <b>Website</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+            </span>
+            <nav class="horizontalMenu">
+                <a href="experiments.html">Experiments</a>
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                </ul>
+
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>Experiments</h1>
+                    <section class="media-player">
+                        <h2>Featured Video</h2>
+
+                        <video controls width="640" preload="metadata">
+                            <source src="/video_audio/video.mp4" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+
+                        <h2>Audio Recording</h2>
+
+                        <audio controls preload="metadata">
+                            <source src="/video_audio/audio.wav" type="audio/wav">
+                            Your browser does not support audio.
+                        </audio>
+                    </section>
+                    <section>
+                        <h2>Canvas Example</h2>
+
+                        <canvas id="myCanvas" width="400" height="200">
+                            Your browser does not support HTML canvas.
+                        </canvas>
+                    </section>
+
+                    <script>
+                        const canvas = document.getElementById("myCanvas");
+                        const ctx = canvas.getContext("2d");
+                    
+
+                        ctx.fillStyle = "steelblue";
+                        ctx.fillRect(30, 30, 120, 60);
+                    </script>
+                
+            </section>
+        </main>
+        <footer data-layout="cluster">
+            <strong>Website</strong>
+            <i>Content crafted by creator.</i>
+        </footer>
+
+    </body>
+
+</html>

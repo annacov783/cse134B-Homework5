@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Website</title>
+        <meta name="color-scheme" content="light dark">
+        <script>
+            try {
+                const theme = localStorage.getItem('theme');
+                if(theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {}
+        </script>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <noscript>
+            <p>Please enable JavaScript to use this form.</p>
+        </noscript>
+        <header>
+            <span>
+                <b>Portfolio</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+            </span>
+            <nav class="horizontalMenu">
+                <a href="/interview_response_library">Interview Response Library</a>
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                    <li><a href="/form-no-js">Form (No JS)</a></li>
+                    <li><a href="/form-with-js">Form (With JS)</a></li>
+                </ul>
+                <label>
+                    <input type="checkbox" id="theme-toggle">
+                    <small>Dark Theme (Click To View Transition)</small>
+                </label>
+
+            </nav>
+        </header>
+        <main>
+            <section>
+                <progress id="page-progress" value="25" max="100"></progress>
+                <h1>Interview Response Library</h1>
+                <ol>
+                    <li>
+                        What are your strengths?
+                        <p>
+                            My biggest strengths are attention to detail, organization, problem solving, and creativity.
+                        </p>
+                    </li>
+                    <li>
+                        What's your biggest weaknesses?
+                        <p>
+                            In the past, I would overthink many decisions. However, I've managed this weakness 
+                            by ensuring good communication and finding practical solutions.
+                        </p>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </section>
+        </main>
+        <footer data-layout="cluster">
+            <strong>Portfolio</strong>
+            <i>Content crafted by creator.</i>
+        </footer>
+        <script src="/theme.js"></script>
+    </body>
+
+</html>

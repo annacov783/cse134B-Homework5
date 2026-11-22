@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Website</title>
+        <link rel="stylesheet" href="styles.css">
+
+        <link rel="icon" type="image/jpeg" href="/images/favicon.jpeg">
+
+        <script>
+            class HelloWorld extends HTMLElement {
+                connectedCallback() {
+                    console.log("Hello World!");
+                }
+            }
+
+            customElements.define("hello-world", HelloWorld);
+        </script>
+        
+
+        
+        
+    </head>
+    <body>
+        <header>    
+            <hello-world></hello-world>
+            <a href="/">
+                <picture>
+                    <source media="(min-width: 60rem)" srcset="/images/favicon.jpeg">
+                    <img src="/images/logo_src2.png" alt="web logo2" width="50">
+                </picture>
+            </a>
+            <span>
+                
+                <b>Portfolio</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+                
+            </span>
+               
+            
+            <nav class="horizontalMenu">
+                <a href="/form-no-js">Form (No JS)</a>
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                    <li><a href="/form-no-js">Form (No JS)</a></li>
+                    <li><a href="/form-with-js">Form (With JS)</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <main>
+            <section>
+                <h1>Form (No Javascript)</h1>
+                <form class="noJSForm" action="https://httpbin.org/post" method="post">
+                    <form-field>
+                        
+                        <label for="name">Name (required)</label><br>
+                        <input id="name" name="name" type="text" minlength="2" maxlength="15" required autocomplete="name">
+                        <output id="name-hint" class="hint" for="name">Please enter a valid name (max 15 characters).</output><br>
+                        <label for="email">Email (required)</label><br>
+                        <input id="email" name="email" type="email" minlength="10" maxlength="20" required autocomplete="email">
+                        <output id="email-hint" class="hint" for="email">Please enter a valid email (max 20 characters).</output><br>
+                        <label for="comments">Comments (required)</label><br>
+                        <textarea id="comments" name="comments" minlength="5" maxlength="150" required></textarea>
+                        <output id="comments-hint" class="hint" for="comments">Please enter a valid email (max 150 characters).</output><br>
+                        <input name="possible_bot" type="hidden" value="true">
+                    </form-field>
+                    <button type="submit">Submit</button>
+                </form>
+                
+                
+            </section>
+        </main>
+        <footer data-layout="cluster">
+            <strong>Portfolio</strong>
+            <i>Content crafted by creator.</i>
+        </footer>
+    </body>
+</html>

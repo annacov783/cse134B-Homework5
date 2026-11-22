@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Website</title>
+        <style> *{border-width: 2px 1.5em;}</style>
+        <meta name="color-scheme" content="light dark">
+        <script>
+            try {
+                const theme = localStorage.getItem('theme');
+                if(theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {}
+        </script>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <noscript>
+            <p>Please enable JavaScript to use this form.</p>
+        </noscript>
+        <header>
+            <span>
+                <b>Portfolio</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+            </span>
+            
+            <nav class="horizontalMenu">
+                <a href="/about">About</a>
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                    <li><a href="/form-no-js">Form (No JS)</a></li>
+                    <li><a href="/form-with-js">Form (With JS)</a></li>
+                </ul>
+                <label>
+                    <input type="checkbox" id="theme-toggle">
+                    <small>Dark Theme (Click To View Transition)</small>
+                </label>
+
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>About</h1>
+                <article>
+                    <h2>Profile</h2>
+                    <p>I'm a student whose studying computer science, with an expected graduation date of March 2027.</p>
+                </article>
+                <article>
+                    <h2>Interests</h2>
+                    <b>Art</b>
+                    <p>
+                        I have a deep appreciation for the artistic visions of Claude Monet, J.M.W Turner, and Thomas Cole,
+                        particularly their use of light, color, and the beauty of nature in their landscape paintings.
+                    </p>
+                    <section class="artwork-images">
+                        <h4>Artwork</h4>
+                        <img src="/images/Claude_Monet_Bridge_over_a_pond_of_Waterlilies.jpg" alt="Claude Monet's The Water-Lily Pond (Photo from The Metropolitan Museum of Art)">
+                        <p>Claude Monet's The Water-Lily Pond (Photo from The Metropolitan Museum of Art)</p>
+                        <img src="/images/J_M_W_Turner_The_Fighting_Temeraire.jpg" alt="J.M.W Turner's The Fighting Temeraire (Photo from The National Gallery, London)" width="600" height="300">
+                        <p>J.M.W Turner's The Fighting Temeraire (Photo from The National Gallery, London)</p>
+                        <img src="/images/Thomas_Cole_View_On_the_Catskill_Early_Autumn.jpg" alt="Thomas Cole's View on the Catskill - Early Autumn (Photo from The Metropolitan Museum of Art)" width="600" height="300">
+                        <p>Thomas Cole's View on the Catskill - Early Autumn (Photo from The Metropolitan Museum of Art)</p>
+                    </section>
+                    <em>Favorite Artwork From The Artists</em>
+
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Which artist's artwork did you like most?</legend>
+
+                            <input type="radio" id="monet" name="artist"
+                                value="Monet" required>
+                            <label for="monet">Monet</label><br>
+
+                            <input type="radio" id="turner" name="artist"
+                                value="Turner">
+                            <label for="turner">Turner</label><br>
+
+                            <input type="radio" id="cole" name="artist"
+                                value="Cole">
+                            <label for="cole">Cole</label><br>
+
+                            <input type="radio" id="other" name="artist"
+                                value="Other">
+                            <label for="other">Other</label><br>
+
+                            <label for="other-artist">
+                                Enter another artist's name:
+                            </label><br>
+                            <input
+                                type="text"
+                                id="other-artist"
+                                name="other_artist"
+                                maxlength="15"
+                                pattern="[A-Za-z ]{1,100}"
+                                title="Only letters and spaces are allowed. Maximum 15 characters."
+                                autocomplete="off"
+                                placeholder="Artist name"
+                            >
+
+                            <br><br>
+
+                            <label for="comments">Comments:</label>
+                            <textarea
+                                id="comments"
+                                name="comments"
+                                rows="4"
+                                cols="40"
+                                maxlength="2"
+                                placeholder="Letters and spaces only"
+                            ></textarea>
+
+                            
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form>
+                    <b>Travel</b>
+                    <p>
+                        I'd love to see the Seven Wonders of the World because of the beauty and stories associated with each wonder. 
+                        Each of the seven wonders has unique culture, history and creativity. The video below provides information 
+                        about Machu Picchu, one of the seven wonders.
+                    </p>
+                    <iframe width="550" height="300" src="https://www.youtube.com/embed/p2NF8ZR28KI" title="Youtube video player" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </article>
+            </section>
+        </main>
+        <footer data-layout="cluster">
+            <strong>Portfolio</strong>
+            <i>Content crafted by creator.</i>
+        </footer>
+        <script src="/theme.js"></script>
+    </body>
+
+</html>
