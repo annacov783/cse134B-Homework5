@@ -1,0 +1,88 @@
+---
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Website</title>
+        <meta name="color-scheme" content="light dark">
+        <script>
+            try {
+                const theme = localStorage.getItem('theme');
+                if(theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {}
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+
+        <style>
+            page-section {
+                display: block;
+                margin: 20px;
+                padding: 15px;
+                border: 1px solid gray;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <noscript>
+            <p>Please enable JavaScript to use this form.</p>
+        </noscript>
+        <header>
+            <span>
+                <b>Portfolio</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+            </span>
+            <nav class="horizontalMenu">
+                <a href="/resume">Resume</a>
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                    <li><a href="/form-no-js">Form (No JS)</a></li>
+                    <li><a href="/form-with-js">Form (With JS)</a></li>
+                </ul>
+                <label>
+                    <input type="checkbox" id="theme-toggle">
+                    <small>Dark Theme (Click To View Transition)</small>
+                </label>
+
+            </nav>
+        </header>
+        <main>
+            <page-section>
+                <h1>Resume</h1>
+                <h3>Skills</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Communication</li>
+                    <li>Problem Solving</li>
+                </ul>
+                <h3>Projects</h3>
+                <p>
+                    Remote Web Server and Analytics Application, Basic Router Implementation, Symbolic Music Generation, etc.
+                </p>
+                <h3>Relevant Courses</h3>
+                <p>
+                    Intro to Computer Security, Machine Learning: Learning Algorithms,
+                    Online Database and Analytics Application, Computer Networks, Recommender Systems and Web Minning, 
+                    Machine Learning for Music, etc.
+                </p>
+                
+            </page-section>
+        </main>
+        <Footer />
+        
+    </body>
+
+</html>

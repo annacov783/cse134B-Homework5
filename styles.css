@@ -344,6 +344,13 @@ footer {
     animation-timing-function: ease-in-out;
 }
 
+info-panel {
+    background-color: var(--color-background, rgb(153, 188, 205));
+    color: var(--color-text, rgb(80, 24, 39));
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
     ::view-transition-old(root),
     ::view-transition-new(root) {

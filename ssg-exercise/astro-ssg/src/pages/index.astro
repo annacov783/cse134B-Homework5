@@ -1,0 +1,95 @@
+---
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Website</title>
+        <meta name="color-scheme" content="light dark">
+        <script>
+            try {
+                const theme = localStorage.getItem('theme');
+                if(theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {}
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="icon" type="image/jpeg" href="/images/favicon.jpeg" />
+
+        <script>
+            class HelloWorld extends HTMLElement {
+                connectedCallback() {
+                    console.log("Hello World!");
+                }
+            }
+
+            customElements.define("hello-world", HelloWorld);
+        </script>
+        
+
+        
+        
+    </head>
+    <body>
+        <noscript>
+            <p>Please enable JavaScript to use this form.</p>
+        </noscript>
+        <header>    
+            <hello-world></hello-world>
+            <a href="/">
+                <picture>
+                    <source media="(min-width: 60rem)" srcset="/images/favicon.jpeg">
+                    <img src="/images/logo_src2.png" alt="web logo2" width="50">
+                </picture>
+            </a>
+            <span>
+                
+                <b>Portfolio</b>
+                <br>
+                <small>
+                    <em>Bachelor's of Computer Science</em>
+                </small>
+                
+            </span>
+               
+            
+            <nav class="horizontalMenu">
+                <ul class="main-menu">
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/interview_response_library">Interview Response Library</a></li>
+                    <li><a href="/form-no-js">Form (No JS)</a></li>
+                    <li><a href="/form-with-js">Form (With JS)</a></li>
+                </ul>
+                <label>
+                    <input type="checkbox" id="theme-toggle">
+                    <small>Dark Theme (Click To View Transition)</small>
+                </label>
+            </nav>
+            
+        </header>
+        <main>
+            <section>
+                <h1>Homepage</h1>
+                
+                <button id="openDialog">Welcome Info</button>
+                <dialog id="myDialog">
+                    <h2>Welcome Info</h2>
+                    <p>
+                        Welcome to the website. You can explore resume and interview response library here.
+                    </p>
+                    <button id="closeDialog">Close</button>
+                </dialog>
+            </section>
+        </main>
+        <Footer />
+
+        
+    </body>
+
+</html>

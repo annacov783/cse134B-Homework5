@@ -13,6 +13,7 @@
                 }
             } catch {}
         </script>
+        <script src="web-component.js" defer></script>
         <link rel="stylesheet" href="styles.css">
 
         <link rel="icon" type="image/jpeg" href="/images/favicon.jpeg">
@@ -74,14 +75,54 @@
             <section>
                 <h1>Homepage</h1>
                 
-                <button id="openDialog">Welcome Info</button>
+                <!--<button id="openDialog">Welcome Info</button>
                 <dialog id="myDialog">
                     <h2>Welcome Info</h2>
                     <p>
                         Welcome to the website. You can explore resume and interview response library here.
                     </p>
                     <button id="closeDialog">Close</button>
-                </dialog>
+                </dialog>-->
+
+                <info-panel compact></info-panel>
+
+                <noscript>
+                    <p>Please enable JavaScript to view the page summary information.</p>
+                </noscript>
+
+                <button id="toggleButton">
+                    Compact/Expand Info
+                </button>
+                
+
+                <script>
+                    const panel = document.querySelector("info-panel");
+
+                    document.querySelector("#toggleButton")
+                        .addEventListener("click", () => {
+
+                            //Part 3
+                            panel.toggleMode();
+
+
+                            /*Working button js from parts 1 and 2
+                            const sections = panel.querySelectorAll("details");
+
+                            // Check if any section is compacted
+                            const anyCompacted = [...sections].some(section => !section.open);
+
+                            if (anyCompacted) {
+                                panel.removeAttribute("compact");
+                            } else {
+                                panel.setAttribute("compact", "");
+                            }
+                            */
+
+                            //part1 - panel.toggleAttribute("compact");
+                        });
+                </script>
+
+                
             </section>
         </main>
         <footer data-layout="cluster">
